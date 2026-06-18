@@ -1,0 +1,10 @@
+node_modules
+dist
+dist-beta
+dist-zip
+*.local
+.vite
+.DS_Store
+.idea
+.vscode
+*.log

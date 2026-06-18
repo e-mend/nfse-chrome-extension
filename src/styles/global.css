@@ -1,0 +1,379 @@
+/* ============================================================
+ * Baixar NFSe — global styles
+ * Variables and base classes mirrored from the original
+ * certificado.html, so PrimeReact components render in the
+ * same visual language ("teal/green primary, ink text, soft
+ * slate surfaces, dense typography").
+ * ============================================================ */
+
+:root {
+  --bnf-green: #22c55e;
+  --bnf-teal: #2dd4bf;
+  --bnf-ink: #e5e7eb;
+  --bnf-muted: #94a3b8;
+  --bnf-line: #334155;
+  --bnf-bg: #0f172a;
+  --bnf-surface: #1e293b;
+  --bnf-warn-bg: #422006;
+  --bnf-warn-fg: #fcd34d;
+  --bnf-warn-border: #78350f;
+  --bnf-error-bg: #450a0a;
+  --bnf-error-fg: #fca5a5;
+  --bnf-success-bg: #052e1d;
+  --bnf-success-fg: #6ee7b7;
+  --bnf-info-bg: #172554;
+  --bnf-info-fg: #93c5fd;
+  --bnf-radius: 12px;
+  --bnf-radius-sm: 7px;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--bnf-ink);
+  background: var(--bnf-bg);
+  font-size: 12.5px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bnf-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 24px 56px;
+}
+
+.bnf-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 5px;
+}
+
+.bnf-top h1 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.bnf-sub {
+  color: var(--bnf-muted);
+  font-size: 11.5px;
+  margin: 0 0 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.bnf-sub kbd {
+  background: #1f2937;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: 10.5px;
+  font-family: inherit;
+  color: #cbd5e1;
+}
+
+.bnf-sub-tips { color: #64748b; }
+
+/* Card */
+.bnf-card {
+  background: var(--bnf-surface);
+  border: 1px solid var(--bnf-line);
+  border-radius: var(--bnf-radius);
+  padding: 6px 16px;
+  margin-bottom: 14px;
+}
+
+.bnf-card h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--bnf-muted);
+  margin: 12px 0 4px;
+}
+
+/* Step */
+.bnf-step {
+  display: flex;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--bnf-line);
+}
+
+.bnf-step:last-child { border-bottom: none; }
+
+.bnf-step.locked { opacity: 0.4; }
+.bnf-step.locked .bnf-step-num { background: #475569; }
+.bnf-step.locked button, .bnf-step.locked a { pointer-events: none; }
+
+.bnf-step-num {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bnf-ink);
+  color: var(--bnf-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.bnf-step-num.bnf-step-num--ghost { background: transparent; }
+
+.bnf-step-body { flex: 1; min-width: 0; }
+
+.bnf-step-title {
+  font-weight: 600;
+  font-size: 13px;
+  margin: 1px 0 7px;
+}
+
+/* Empresa info box */
+.bnf-emp-info {
+  background: #111827;
+  border: 1px solid var(--bnf-line);
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+
+.bnf-emp-nome { font-weight: 700; font-size: 13px; }
+.bnf-emp-meta { font-size: 11.5px; color: var(--bnf-muted); margin-top: 3px; }
+
+.bnf-emp-preview-note {
+  font-size: 11px;
+  color: var(--bnf-warn-fg);
+  background: var(--bnf-warn-bg);
+  border: 1px solid var(--bnf-warn-border);
+  border-radius: 6px;
+  padding: 5px 9px;
+  margin-top: 9px;
+  line-height: 1.45;
+}
+
+.bnf-emp-preview-note strong { color: var(--bnf-warn-fg); }
+
+/* Status banner */
+.bnf-status {
+  margin: 12px 0;
+  padding: 8px 12px;
+  border-radius: var(--bnf-radius-sm);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+.bnf-status.info { background: var(--bnf-info-bg); color: var(--bnf-info-fg); }
+.bnf-status.success { background: var(--bnf-success-bg); color: var(--bnf-success-fg); }
+.bnf-status.warn { background: var(--bnf-warn-bg); color: var(--bnf-warn-fg); }
+.bnf-status.error { background: var(--bnf-error-bg); color: var(--bnf-error-fg); }
+
+.bnf-status .bnf-spinner {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 7px;
+  vertical-align: -1px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  opacity: 0.65;
+  animation: bnf-spin 0.7s linear infinite;
+}
+
+@keyframes bnf-spin { to { transform: rotate(360deg); } }
+
+/* Portal hint */
+.bnf-portal-hint {
+  margin: 11px 0 0;
+  padding: 8px 11px;
+  border-radius: var(--bnf-radius-sm);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--bnf-warn-fg);
+  background: var(--bnf-warn-bg);
+  border: 1px solid var(--bnf-warn-border);
+}
+
+.bnf-portal-hint a { color: var(--bnf-warn-fg); font-weight: 600; text-decoration: underline; }
+
+/* Progress block */
+.bnf-progress { margin: 14px 0; }
+.bnf-progress .bnf-pline { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
+
+/* Hint text */
+.bnf-hint { font-size: 11.5px; color: var(--bnf-muted); margin: 6px 0 0; line-height: 1.5; }
+
+/* Inline grid for "Pasta" row */
+.bnf-pasta-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 9px 12px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.bnf-pasta-grid .bnf-lbl {
+  font-size: 11.5px;
+  color: var(--bnf-muted);
+}
+
+/* Table tweaks for Empresas card (PrimeReact DataTable inherits most styles, but
+   we want the row "Razão / CNPJ" feel of the original) */
+.bnf-empcol-nome {
+  max-width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bnf-empcol-cnpj { white-space: nowrap; }
+
+/* Dense PrimeReact controls inside cards/steps — matches the 11.5px body rhythm */
+.bnf-step .p-button.p-button-sm,
+.bnf-card .p-button.p-button-sm {
+  padding: 0.32rem 0.7rem;
+  font-size: 12px;
+}
+
+.bnf-step .p-dropdown,
+.bnf-card .p-dropdown {
+  font-size: 12px;
+}
+
+.bnf-step .p-dropdown .p-dropdown-label.p-inputtext,
+.bnf-card .p-dropdown .p-dropdown-label.p-inputtext {
+  padding: 0.32rem 0.55rem;
+}
+
+.bnf-step .p-dropdown .p-dropdown-trigger,
+.bnf-card .p-dropdown .p-dropdown-trigger {
+  width: 1.75rem;
+}
+
+.bnf-step .p-inputtext:not(.p-dropdown-label),
+.bnf-card .p-inputtext:not(.p-dropdown-label),
+.bnf-step .p-calendar .p-inputtext,
+.bnf-card .p-calendar .p-inputtext {
+  font-size: 12px;
+  padding: 0.32rem 0.55rem;
+}
+
+/* Primary action color override to match the original green */
+.p-button.bnf-primary,
+.p-button.bnf-primary.p-button-text {
+  background: var(--bnf-green);
+  border-color: var(--bnf-green);
+  color: #fff;
+}
+.p-button.bnf-primary:hover { filter: brightness(0.95); }
+
+.bnf-link-mais {
+  background: none;
+  border: none;
+  color: var(--bnf-teal);
+  font-size: 11.5px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+.bnf-link-mais:hover { text-decoration: underline; }
+
+/* Footer */
+.bnf-footer-note {
+  margin-top: 24px;
+  font-size: 10.5px;
+  color: #64748b;
+  text-align: center;
+}
+
+/* Toast — match the dense typography used by the rest of the UI */
+.p-toast {
+  width: 300px;
+  font-size: 11.5px;
+}
+.p-toast .p-toast-message {
+  border-radius: var(--bnf-radius-sm);
+  margin: 0 0 8px;
+}
+.p-toast .p-toast-message-content {
+  padding: 8px 12px;
+  gap: 8px;
+}
+.p-toast .p-toast-message-icon,
+.p-toast .p-toast-icon-close {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+}
+.p-toast .p-toast-summary {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.p-toast .p-toast-detail {
+  font-size: 11.5px;
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+/* Tab Navigation */
+.bnf-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.bnf-left-menu {
+  flex: 0 0 20px;
+}
+
+.bnf-tab-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.bnf-tab-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bnf-tab-menu li {
+  margin-bottom: 8px;
+}
+
+.bnf-tab-button {
+  width: 100%;
+  padding: 10px 15px;
+  background: var(--bnf-surface);
+  border: 1px solid var(--bnf-line);
+  border-radius: var(--bnf-radius-sm);
+  color: var(--bnf-ink);
+  text-align: left;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.bnf-tab-button:hover {
+  background: #334155;
+}
+
+.bnf-tab-button.active {
+  background: var(--bnf-green);
+  color: white;
+  border-color: var(--bnf-green);
+}
+
+.bnf-tab-content {
+  padding: 10px 0;
+}
