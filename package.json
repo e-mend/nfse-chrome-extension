@@ -1,6 +1,6 @@
 {
   "name": "baixar-nfse-extension",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Baixar NFSe — Chrome extension (React + PrimeReact + RxDB skeleton)",
   "type": "module",
   "private": true,

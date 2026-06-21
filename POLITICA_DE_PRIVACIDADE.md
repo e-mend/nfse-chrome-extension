@@ -70,14 +70,13 @@ armazenamento do próprio navegador (IndexedDB e `chrome.storage.local`). Eles
 
 A extensão pede apenas as permissões indispensáveis para funcionar:
 
-- **downloads** — salvar os arquivos XML e PDF baixados no seu computador.
-- **storage** / **unlimitedStorage** — guardar localmente suas notas,
-  configurações e o controle de NSU por empresa.
-- **tabs** — abrir a página da extensão e a página do serviço oficial em novas
-  abas e detectar quando elas terminam de carregar (necessário para a
-  autenticação por certificado).
+- **unlimitedStorage** — guardar localmente suas notas, configurações e o
+  controle de NSU por empresa, sem o limite de cota padrão do navegador.
 - **Acesso aos sites `nfse.gov.br` e `adn.nfse.gov.br`** — para consultar e
   baixar suas notas pela API oficial. **Nenhum outro site é acessado.**
+
+Os arquivos XML e PDF são salvos pelo fluxo de download padrão do navegador
+(sem a permissão `downloads`).
 
 ---
 

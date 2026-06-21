@@ -194,10 +194,11 @@ time. Permissions declared:
 
 | Permission | Why |
 |---|---|
-| `downloads` | save the XML and PDF files via `chrome.downloads`. |
-| `storage` / `unlimitedStorage` | local IndexedDB store (notas, empresas, preferences). |
-| `tabs` | open the *certificado* page on icon click and the `forceZero` cert tab. |
+| `unlimitedStorage` | local IndexedDB store (notas, empresas, preferences) can exceed the default quota. |
 | `host_permissions` `nfse.gov.br` / `adn.nfse.gov.br` | the official services the user queries. |
+
+XML/PDF/Excel files are saved through the browser's standard download flow (a
+synthetic `<a download>` click), so **no `downloads` permission is required**.
 
 ## Generate a `.zip` for the Chrome Web Store
 
@@ -217,7 +218,7 @@ Dashboard** when creating the listing. Reviewers reject submissions missing any.
 | Requirement | Notes |
 |---|---|
 | Developer account | One-time US$ 5 fee at <https://chrome.google.com/webstore/devconsole>. |
-| **Privacy policy URL** | Required (the manifest uses `storage`, `tabs`, `downloads`, `host_permissions`). A ready draft lives in `POLITICA_DE_PRIVACIDADE.md` — host it publicly and link it. |
+| **Privacy policy URL** | Required (the manifest uses `unlimitedStorage` and `host_permissions`). A ready draft lives in `POLITICA_DE_PRIVACIDADE.md` — host it publicly and link it. |
 | **Single-purpose description** | *"Baixar XML e PDF das NFS-e do usuário pela API oficial ADN usando o certificado digital."* |
 | **Permission justifications** | One sentence per permission — see the table above. |
 | Icons | `icons/icon16/48/128.png` — already bundled. 128×128 doubles as the listing image. |

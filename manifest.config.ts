@@ -27,7 +27,6 @@ export default defineManifest({
     type: 'module',
   },
   permissions: [
-    'downloads',
     'unlimitedStorage',
   ],
   host_permissions: [
