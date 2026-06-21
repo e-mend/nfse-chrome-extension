@@ -28,9 +28,7 @@ export default defineManifest({
   },
   permissions: [
     'downloads',
-    'storage',
     'unlimitedStorage',
-    'tabs',
   ],
   host_permissions: [
     'https://www.nfse.gov.br/*',
